@@ -26,7 +26,6 @@ public class CountrySelectionView extends AppCompatActivity
     private ProgressBar progressBar;
     private NetworkRequest request;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,9 +36,8 @@ public class CountrySelectionView extends AppCompatActivity
         progressBar.setVisibility(View.VISIBLE);
         disableUserInteraction();
 
-        String url = "https://free.currconv.com/api/v7/countries?apiKey=YOUR_KEY_HERE";
+        String url = "https://free.currconv.com/api/v7/countries?apiKey=YOUR_API_KEY";
         request = new NetworkRequest(this, url, this);
-
     }
 
     public void loadListView(List<Country> listData) {

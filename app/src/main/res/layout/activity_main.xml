@@ -7,145 +7,288 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent">
 
-    <LinearLayout
-        android:id="@+id/FirstRowButtonLayout"
-        android:layout_width="match_parent"
+        <LinearLayout
+            android:id="@+id/FirstRowButtonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button1"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="0.333"
+                android:background="@drawable/circle_button"
+                android:onClick="numericPadTapped"
+                android:text="@string/one"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/button2"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="0.333"
+                android:background="@drawable/circle_button"
+                android:onClick="numericPadTapped"
+                android:text="@string/two"
+                android:textSize="30sp" />
+
+
+            <Button
+                android:id="@+id/button3"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="0.333"
+                android:background="@drawable/circle_button"
+                android:onClick="numericPadTapped"
+                android:text="@string/three"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/SecondRowButtonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button4"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="0.333"
+                android:background="@drawable/circle_button"
+                android:onClick="numericPadTapped"
+                android:text="@string/four"
+                android:textSize="30sp" />
+
+
+            <Button
+                android:id="@+id/button5"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="0.333"
+                android:background="@drawable/circle_button"
+                android:onClick="numericPadTapped"
+                android:text="@string/five"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/button6"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="0.333"
+                android:background="@drawable/circle_button"
+                android:onClick="numericPadTapped"
+                android:text="@string/six"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button7"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="0.333"
+                android:background="@drawable/circle_button"
+                android:onClick="numericPadTapped"
+                android:text="@string/seven"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/button8"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="0.333"
+                android:background="@drawable/circle_button"
+                android:onClick="numericPadTapped"
+                android:text="@string/eight"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/button9"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="0.333"
+                android:background="@drawable/circle_button"
+                android:onClick="numericPadTapped"
+                android:text="@string/nine"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/emptyButton"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="0.333"
+                android:background="@drawable/circle_button"
+                android:text="@string/empty"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/button0"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="0.333"
+                android:background="@drawable/circle_button"
+                android:onClick="numericPadTapped"
+                android:text="@string/zero"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/backspaceButton"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="0.333"
+                android:background="@drawable/circle_button"
+                android:onClick="numericPadTapped"
+                android:text="@string/backspace"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/separatorImageView"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/image_view_content_description"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:color/darker_gray" />
+
+    <ImageView
+        android:id="@+id/country1FlagImageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/separatorImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/image_view_content_description" />
+
+    <ImageView
+        android:id="@+id/country2FlagImageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/separatorImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/image_view_content_description" />
+
+    <TextView
+        android:id="@+id/country1NameTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginTop="20dp"
+        android:text="Country 1"
+        android:textColor="#0B7EB3"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/separatorImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/country1FlagImageView" />
 
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:layout_weight="0.333"
-            android:background="@drawable/circle_button"
-            android:textSize="30sp"
-            android:text="@string/one" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:layout_weight="0.333"
-            android:background="@drawable/circle_button"
-            android:textSize="30sp"
-            android:text="@string/two" />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:layout_weight="0.333"
-            android:background="@drawable/circle_button"
-            android:textSize="30sp"
-            android:text="@string/three" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/SecondRowButtonLayout"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/country2NameTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginTop="20dp"
+        android:text="Country 2"
+        android:textColor="#0B7EB3"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/separatorImageView"
+        app:layout_constraintTop_toBottomOf="@+id/country2FlagImageView" />
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:layout_weight="0.333"
-            android:background="@drawable/circle_button"
-            android:textSize="30sp"
-            android:text="@string/four" />
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:layout_weight="0.333"
-            android:background="@drawable/circle_button"
-            android:textSize="30sp"
-            android:text="@string/five" />
-
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:layout_weight="0.333"
-            android:background="@drawable/circle_button"
-            android:textSize="30sp"
-            android:text="@string/six" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/country1CurrencyTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginBottom="30dp"
+        android:text="1"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/country1SelectionButton"
+        app:layout_constraintEnd_toStartOf="@+id/separatorImageView"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:layout_weight="0.333"
-            android:background="@drawable/circle_button"
-            android:textSize="30sp"
-            android:text="@string/seven" />
-
-        <Button
-            android:id="@+id/button8"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:layout_weight="0.333"
-            android:background="@drawable/circle_button"
-            android:textSize="30sp"
-            android:text="@string/eight" />
-
-        <Button
-            android:id="@+id/button9"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:layout_weight="0.333"
-            android:background="@drawable/circle_button"
-            android:textSize="30sp"
-            android:text="@string/nine" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/country2CurrencyTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginBottom="30dp"
+        android:text="1"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/country1SelectionButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/separatorImageView" />
 
-        <Button
-            android:id="@+id/emptyButton"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:layout_weight="0.333"
-            android:background="@drawable/circle_button"
-            android:textSize="30sp"
-            android:text="@string/empty" />
+    <Button
+        android:id="@+id/country1SelectionButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        android:onClick="changeCountryButtonClicked"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toStartOf="@+id/separatorImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/button0"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:layout_weight="0.333"
-            android:background="@drawable/circle_button"
-            android:textSize="30sp"
-            android:text="@string/zero" />
+    <Button
+        android:id="@+id/country2SelectionButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        android:onClick="changeCountryButtonClicked"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/separatorImageView"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/backspaceButton"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:layout_weight="0.333"
-            android:background="@drawable/circle_button"
-            android:textSize="30sp"
-            android:text="@string/backspace" />
-    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
