@@ -21,10 +21,9 @@ import java.util.Iterator;
 import java.util.List;
 
 public class CountrySelectionView extends AppCompatActivity
-        implements CountryListAdapter.RecyclerViewSelection, NetworkRequest.NetworkResponse {
+        implements CountryListAdapter.RecyclerViewSelection, CountriesNetworkModel.CountriesNetworkModelResponse {
 
     private ProgressBar progressBar;
-    private NetworkRequest request;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +32,15 @@ public class CountrySelectionView extends AppCompatActivity
 
         progressBar = findViewById(R.id.progressBar);
 
-        progressBar.setVisibility(View.VISIBLE);
-        disableUserInteraction();
+        List<Country> countries = CountriesNetworkModel.getInstance().countries;
 
-        String url = "https://free.currconv.com/api/v7/countries?apiKey=YOUR_API_KEY";
-        request = new NetworkRequest(this, url, this);
+        if (countries != null && countries.size() > 0) {
+            loadListView(countries);
+        } else {
+            progressBar.setVisibility(View.VISIBLE);
+            UIHelper.disableUserInteraction(this);
+            CountriesNetworkModel.getInstance().callbackObject = this;
+        }
     }
 
     public void loadListView(List<Country> listData) {
@@ -61,48 +64,15 @@ public class CountrySelectionView extends AppCompatActivity
         finish();
     }
 
-    private void disableUserInteraction() {
-        getWindow().setFlags(
-                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
-        );
-    }
-
-    private void enableUserInteraction() {
-        getWindow().clearFlags(
-                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
-        );
-    }
-
-    public void networkResponse(JSONObject jsonObject ,VolleyError error) {
-        enableUserInteraction();
+    @Override
+    public void countriesDataFetched(boolean success) {
+        UIHelper.enableUserInteraction(this);
         progressBar.setVisibility(View.GONE);
 
-        if (jsonObject != null) {
-            parseJSONObject(jsonObject);
-        } else {
-            Toast.makeText(this, "Response Error", Toast.LENGTH_SHORT).show();
-        }
+        List<Country> countries = CountriesNetworkModel.getInstance().countries;
 
-        request = null;
-    }
-
-    private void parseJSONObject(JSONObject jsonObject) {
-        try {
-            JSONObject results = (JSONObject) jsonObject.get("results");
-            Iterator<String> countryKeys = results.keys();
-            List<Country> countries = new ArrayList<Country>();
-
-            while (countryKeys.hasNext()) {
-                String countryKey = countryKeys.next();
-                JSONObject countryJson = results.getJSONObject(countryKey);
-                Country country = new Country(countryJson);
-                countries.add(country);
-            }
-
+        if (countries.size() > 0) {
             loadListView(countries);
-        } catch (Exception exception) {
-            Log.d(MainActivity.TAG, "parser error" + exception.getLocalizedMessage());
         }
     }
 }
