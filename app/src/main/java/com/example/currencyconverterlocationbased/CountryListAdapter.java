@@ -77,7 +77,7 @@ public class CountryListAdapter extends RecyclerView.Adapter<CountryListAdapter.
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.country_list_item, viewGroup, false);
+        View view = inflater.inflate(R.layout.item_country_list, viewGroup, false);
 
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
