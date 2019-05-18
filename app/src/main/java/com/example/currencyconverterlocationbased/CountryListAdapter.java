@@ -7,6 +7,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,24 +16,60 @@ import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-public class CountryListAdapter extends RecyclerView.Adapter<CountryListAdapter.ViewHolder> {
+public class CountryListAdapter extends RecyclerView.Adapter<CountryListAdapter.ViewHolder>
+        implements Filterable {
 
-    private Country[] items;
+    private ArrayList<Country> items;
+    private ArrayList<Country> itemsFull;
     private Context context;
     private RecyclerViewSelection selection;
+
+    private Filter countryFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            ArrayList<Country> filteredCountries = new ArrayList<Country>();
+
+            if (constraint == null || constraint.length() == 0) {
+                filteredCountries.addAll(itemsFull);
+            } else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (Country country: itemsFull) {
+                    if (country.name.toLowerCase().contains(filterPattern)) {
+                        filteredCountries.add(country);
+                    }
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredCountries;
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            items.clear();
+            items.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
 
     public CountryListAdapter(Context context,
                               Country[] items,
                               CountryListAdapter.RecyclerViewSelection handler) {
-        this.items = items;
+        this.items = new ArrayList<Country>(Arrays.asList(items));
+        this.itemsFull = new ArrayList<Country>(Arrays.asList(items));
         this.context = context;
         selection = handler;
     }
 
     @Override
     public int getItemCount() {
-        return items.length;
+        return items.size();
     }
 
     @NonNull
@@ -47,7 +85,7 @@ public class CountryListAdapter extends RecyclerView.Adapter<CountryListAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        final Country country = items[i];
+        final Country country = items.get(i);
 
         viewHolder.textView.setText(country.name);
 
@@ -89,5 +127,10 @@ public class CountryListAdapter extends RecyclerView.Adapter<CountryListAdapter.
 
     public interface RecyclerViewSelection {
         public void selected(Country country);
+    }
+
+    @Override
+    public Filter getFilter() {
+        return countryFilter;
     }
 }
