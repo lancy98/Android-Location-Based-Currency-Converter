@@ -26,8 +26,10 @@
                 android:layout_height="80dp"
                 android:layout_weight="0.333"
                 android:background="@drawable/circle_button"
+                android:fontFamily="@font/lemon"
                 android:onClick="numericPadTapped"
                 android:text="@string/one"
+                android:textColor="#444444"
                 android:textSize="30sp" />
 
             <Button
@@ -37,8 +39,10 @@
                 android:layout_height="80dp"
                 android:layout_weight="0.333"
                 android:background="@drawable/circle_button"
+                android:fontFamily="@font/lemon"
                 android:onClick="numericPadTapped"
                 android:text="@string/two"
+                android:textColor="#444444"
                 android:textSize="30sp" />
 
 
@@ -49,8 +53,10 @@
                 android:layout_height="80dp"
                 android:layout_weight="0.333"
                 android:background="@drawable/circle_button"
+                android:fontFamily="@font/lemon"
                 android:onClick="numericPadTapped"
                 android:text="@string/three"
+                android:textColor="#444444"
                 android:textSize="30sp" />
         </LinearLayout>
 
@@ -67,8 +73,10 @@
                 android:layout_height="80dp"
                 android:layout_weight="0.333"
                 android:background="@drawable/circle_button"
+                android:fontFamily="@font/lemon"
                 android:onClick="numericPadTapped"
                 android:text="@string/four"
+                android:textColor="#444444"
                 android:textSize="30sp" />
 
 
@@ -79,8 +87,10 @@
                 android:layout_height="80dp"
                 android:layout_weight="0.333"
                 android:background="@drawable/circle_button"
+                android:fontFamily="@font/lemon"
                 android:onClick="numericPadTapped"
                 android:text="@string/five"
+                android:textColor="#444444"
                 android:textSize="30sp" />
 
             <Button
@@ -90,8 +100,10 @@
                 android:layout_height="80dp"
                 android:layout_weight="0.333"
                 android:background="@drawable/circle_button"
+                android:fontFamily="@font/lemon"
                 android:onClick="numericPadTapped"
                 android:text="@string/six"
+                android:textColor="#444444"
                 android:textSize="30sp" />
 
         </LinearLayout>
@@ -108,8 +120,10 @@
                 android:layout_height="80dp"
                 android:layout_weight="0.333"
                 android:background="@drawable/circle_button"
+                android:fontFamily="@font/lemon"
                 android:onClick="numericPadTapped"
                 android:text="@string/seven"
+                android:textColor="#444444"
                 android:textSize="30sp" />
 
             <Button
@@ -119,8 +133,10 @@
                 android:layout_height="80dp"
                 android:layout_weight="0.333"
                 android:background="@drawable/circle_button"
+                android:fontFamily="@font/lemon"
                 android:onClick="numericPadTapped"
                 android:text="@string/eight"
+                android:textColor="#444444"
                 android:textSize="30sp" />
 
             <Button
@@ -130,8 +146,10 @@
                 android:layout_height="80dp"
                 android:layout_weight="0.333"
                 android:background="@drawable/circle_button"
+                android:fontFamily="@font/lemon"
                 android:onClick="numericPadTapped"
                 android:text="@string/nine"
+                android:textColor="#444444"
                 android:textSize="30sp" />
 
         </LinearLayout>
@@ -158,8 +176,10 @@
                 android:layout_height="80dp"
                 android:layout_weight="0.333"
                 android:background="@drawable/circle_button"
+                android:fontFamily="@font/lemon"
                 android:onClick="numericPadTapped"
                 android:text="@string/zero"
+                android:textColor="#444444"
                 android:textSize="30sp" />
 
             <Button
@@ -169,8 +189,10 @@
                 android:layout_height="80dp"
                 android:layout_weight="0.333"
                 android:background="@drawable/circle_button"
+                android:fontFamily="@font/lemon"
                 android:onClick="numericPadTapped"
                 android:text="@string/backspace"
+                android:textColor="#444444"
                 android:textSize="30sp" />
 
         </LinearLayout>
@@ -215,6 +237,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/lemon"
         android:textColor="#0B7EB3"
         android:textSize="30sp"
         app:layout_constraintEnd_toStartOf="@+id/separatorImageView"
@@ -226,6 +249,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/lemon"
         android:textColor="#0B7EB3"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -234,9 +258,12 @@
 
     <TextView
         android:id="@+id/country1CurrencyTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
+        android:fontFamily="@font/lemon"
+        android:maxLines="2"
+        android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
@@ -245,9 +272,12 @@
 
     <TextView
         android:id="@+id/country2CurrencyTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
+        android:fontFamily="@font/lemon"
+        android:maxLines="2"
+        android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
