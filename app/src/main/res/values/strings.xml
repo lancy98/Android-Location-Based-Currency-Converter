@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Currency Converter Location Based</string>
+    <string name="app_name">LCurrency Converter</string>
     <string name="backspace">⌫</string>
     <string name="zero">0</string>
     <string name="empty" />
