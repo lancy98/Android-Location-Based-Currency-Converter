@@ -23,7 +23,7 @@ public class CurrencyDataNetworkModel implements NetworkRequest.NetworkResponse 
         this.toCountry = toCountry;
         this.callback = callback;
 
-        String url = "https://free.currconv.com/api/v7/convert?apiKey=YOUR_API_KEY&q="
+        String url = "https://free.currconv.com/api/v7/convert?apiKey=951c422a62c8611c2d58&q="
                 + currencyConvertCode()
                 +"&compact=ultra";
         request = new NetworkRequest(MainActivity.getAppContext(), url, this);

@@ -159,15 +159,19 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
+
+            <ImageButton
                 android:id="@+id/emptyButton"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_weight="0.333"
                 android:background="@drawable/circle_button"
+                android:onClick="locationButtonTapped"
                 android:text="@string/empty"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                app:srcCompat="@drawable/ic_my_location" />
+
 
             <Button
                 android:id="@+id/button0"

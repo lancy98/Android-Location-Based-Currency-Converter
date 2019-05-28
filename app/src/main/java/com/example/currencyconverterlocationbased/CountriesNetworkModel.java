@@ -17,7 +17,7 @@ public class CountriesNetworkModel implements NetworkRequest.NetworkResponse {
     public CountriesNetworkModel.CountriesNetworkModelResponse callbackObject;
 
     private CountriesNetworkModel() {
-        String url = "https://free.currconv.com/api/v7/countries?apiKey=YOUR_API_KEY";
+        String url = "https://free.currconv.com/api/v7/countries?apiKey=951c422a62c8611c2d58";
         request = new NetworkRequest(MainActivity.getAppContext(), url, this);
     }
 

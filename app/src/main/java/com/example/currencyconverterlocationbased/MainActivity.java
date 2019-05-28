@@ -207,6 +207,11 @@ public class MainActivity extends AppCompatActivity
         updateToCountryCurrencyValue();
     }
 
+    public void locationButtonTapped(View view) {
+        Intent mapIntent = new Intent(MainActivity.this, UserMapActivity.class);
+        startActivity(mapIntent);
+    }
+
     private void updateToCountryCurrencyValue() {
         String currentValueString = country1CurrencyTextView.getText().toString();
         double currencyValue = Double.valueOf(currentValueString);
